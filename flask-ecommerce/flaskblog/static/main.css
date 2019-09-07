@@ -1,0 +1,141 @@
+
+/*Code for css
+taken from Corey Shafer @ github, posted 4 May 2018
+accessed 27-04-2019
+https://github.com/CoreyMSchafer/code_snippets/blob/master/Python/Flask_Blog/10-Password-Reset-Email/flaskblog/static/main.css
+*/
+
+body {
+  background: #fafafa;
+  color: #333333;
+  margin-top: 5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+}
+
+.bg-steel {
+  background-color: #31343d;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.books {
+  width: 350px;
+  height: 600px;
+  margin-right: 5px;
+  float: left;
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 2px;
+  padding-top: 2px;
+  margin-top: 4px;
+  border-top: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+.green {
+  color: #38a02e;
+}
+
+.left {
+  float: left;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+.account {
+  min-width: 50%;
+  max-width: 100%;
+  margin-left: 0;
+}
+
+.paginate {
+  clear: both;
+}
+
+
+.home-page-header {
+  width: 100%;
+  margin: auto;
+  padding: 2%;
+  background-color: #afafaf;
+}
+
+
+.home-page-main {
+  width: 100%;
+  margin: auto;
+  padding: 2%;
+  height: auto;
+}
+
+
+
+
+
+
+
+
+

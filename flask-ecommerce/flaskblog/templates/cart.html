@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Your Saved Items</h1>
+
+    <table class="table table-striped">
+    	<tr>
+    		<th>Product</th>
+    		<th>Quantity</th>
+    		<th>Price</th>
+    		<th>Total</th>
+    		<th>Remove</th>
+    	</tr>
+
+	    {% for key, value in display_cart.items() %}
+	    <tr>
+	    	<td><a href="{{ url_for('book', book_id=value['bookID']) }}">{{ value["title"] }}</a></td>
+	    	<td>{{ value["quantity"] }}</td>
+	    	<td>{{ value["price"] }}0</td>
+	    	<td>{{ value["quantity"] * value["price"] }}0</td>
+
+	    	<td>
+	    		<form action="{{ url_for('delete_saved_item', book_id=key|int) }}" method="POST">
+	    			<input class="" type="submit" value="Delete">
+	    		</form>
+	    	</td>
+	    </tr>
+
+	   	{% endfor %}
+
+   </table>
+   <p>Total: £{{ total }}0</p>
+   <p>Number of items: {{ total_quantity }}</p>
+
+{% endblock content %}

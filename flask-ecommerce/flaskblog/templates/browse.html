@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Books for Sale</h1>
+
+    <h3>Search by Subject</h3>
+    <center><p>
+        <a href="{{ url_for('browse_by_subject', subject_id=1)}}">Accounting & Finance</a> -
+        <a href="{{ url_for('browse_by_subject', subject_id=2)}}">Biology</a> -
+        <a href="{{ url_for('browse_by_subject', subject_id=3)}}">Business</a> -
+        <a href="{{ url_for('browse_by_subject', subject_id=4)}}">Chemistry</a> -
+        <a href="{{ url_for('browse_by_subject', subject_id=5)}}">Computer Science</a> -
+        <a href="{{ url_for('browse_by_subject', subject_id=6)}}">Dentistry</a> -
+        <a href="{{ url_for('browse_by_subject', subject_id=7)}}">Economics</a> -
+        <a href="{{ url_for('browse_by_subject', subject_id=8)}}">Engineering</a> -
+        <a href="{{ url_for('browse_by_subject', subject_id=9)}}">English Literature</a> -
+        <a href="{{ url_for('browse_by_subject', subject_id=10)}}">History</a> -
+        <a href="{{ url_for('browse_by_subject', subject_id=11)}}">Languages</a> -
+        <a href="{{ url_for('browse_by_subject', subject_id=12)}}">Law</a> -
+        <a href="{{ url_for('browse_by_subject', subject_id=13)}}">Marketing</a> -
+        <a href="{{ url_for('browse_by_subject', subject_id=14)}}">Maths</a> -
+        <a href="{{ url_for('browse_by_subject', subject_id=15)}}">Medicine</a> -
+        <a href="{{ url_for('browse_by_subject', subject_id=16)}}">Music</a> -
+        <a href="{{ url_for('browse_by_subject', subject_id=17)}}">Philosophy</a> -
+        <a href="{{ url_for('browse_by_subject', subject_id=18)}}">Physics</a>
+    </p>
+    <p><a href="{{ url_for('browse_all') }}">Show All</a></p>
+    </center>
+
+
+
+
+    {% for book in books %}
+
+        <article class="media content-section books">
+          <div class="media-body">
+            <h5><a class="article-title" href="{{ url_for('book', book_id=book.id) }}">{{ book.title }}</a></h5>
+
+            <img class="" src="{{ url_for('static', filename='post_pics/' + book.book_image) }}">
+
+            <p class="article-content">
+                <b>Author(s):</b> {{ book.author }}
+                <b>Published</b>: {{ book.year }}
+                <b>Subject</b>: {{ book.subjID.subjectName }}</p>
+            
+            <p class="article-content"><b>Price:</b> £{{ book.price }}0</p>
+
+            <div class="article-metadata">
+                <a class="btn btn-info" href="{{ url_for('buy', book_id=book.id) }}">Buy Now</a> <a class="btn btn-outline-info" href="{{ url_for('add_to_cart', book_id=book.id) }}">Save Item</a><br><br>
+              Posted by <a class="mr-2" href="{{ url_for('user_books', username=book.poster.username) }}">{{ book.poster.username }}</a>
+              <small class="text-muted">{{ book.date_posted.strftime('%Y-%m-%d') }}</small>
+
+            </div>
+
+          </div>
+        </article>
+
+    {% endfor %}
+
+
+
+
+
+{% endblock content %}

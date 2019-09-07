@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block content %}
+  <article class="media content-section">
+    <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + book.poster.image_file) }}">
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="{{ url_for('user_books', username=book.poster.username) }}">{{ book.poster.username }}</a>
+        <small class="text-muted">{{ book.date_posted.strftime('%Y-%m-%d') }}</small>
+
+        
+
+      </div>
+      <h2 class="article-title">{{ book.title }}</h2>
+      <p class="article-content">
+              <b>Author(s): </b> {{ book.author }}
+              <b>ISBN: </b> {{ book.isbn }}
+              <b>Published: </b> {{ book.year }} <br>
+              {{ book.comment }}
+            </p>
+
+
+      {% if book.poster == current_user %}
+          <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('update_book', book_id=book.id) }}">Update</a>
+            <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+          </div>
+
+        {% else %}
+
+          <form action="" method="">
+            <a class="btn btn-info" href="{{ url_for('buy', book_id=book.id) }}">Buy Now</a> <a class="btn btn-outline-info" href="{{ url_for('add_to_cart', book_id=book.id) }}">Save Item</a>
+          </form>
+
+        {% endif %}
+
+    </div>
+  </article>
+  <!-- Modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Delete Book?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <form action="{{ url_for('delete_book', book_id=book.id) }}" method="POST">
+            <input class="btn btn-danger" type="submit" value="Delete">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

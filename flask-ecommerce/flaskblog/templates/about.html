@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>About Us</h1>
+
+    <article class="media content-section">
+    	<div class="media-body">
+    		<h3>Our Mission</h3>
+        	<p class="article-content">
+            	To provide an easy to use, eco-friendly service to students, helping them turn their unwanted books into money.
+        	</p><Br>
+        	<h3>What is Student Swap-It?</h3>
+        	<p class="article-content">
+            	Student Swap-It is an online marketplace for Cardiff University Students to sell and buy academic books! Books can get expensive and can be a hassle when moving out of university. Why not sell them on to another grateful student who doesn't want to spend hundreds on brand-new books? Win-win!
+        	</p><br>
+        	<h3>How can I sell my books?</h3>
+        	<p class="article-content">
+            	All you need to do is register an account with us and post the books you want to sell - it's as simple as that!
+            	Alternatively, you can visit our location at Cardiff University and make use of our <b><span class="green">Drop-It!</span></b> service. If you want to sell your books quickly and all at once, then you can pay us a visit and we'll buy your books from you! More information can be found <a href="{{ url_for('drop_it') }}">here</a>.
+        	</p><Br>
+        	<h3>How can I purchase books?</h3>
+        	<p class="article-content">
+            	We sell all of our books online on this website. You can buy books that students have listed themselves, or books that we have collected from students at the <b>Drop-It!</b> service and listed here. All you need to do is create an account and click <b>Buy Now</b>.
+        	</p><Br><br>
+    	</div>
+    </article>
+{% endblock content %}

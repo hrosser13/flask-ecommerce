@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+	
+	<div class="home-page-header">
+
+		<center><img src="static/logo.png"></center>
+
+	</div>
+
+	<div class="home-page-main">
+
+		<h3>Newest Listings</h3>
+		<p><a href="{{ url_for('browse_all') }}">View All Books >>></a></p>
+
+		{% for book in books %}
+
+        <article class="media content-section books">
+          <div class="media-body">
+            <h5><a class="article-title" href="{{ url_for('book', book_id=book.id) }}">{{ book.title }}</a></h5>
+
+            <img class="" src="{{ url_for('static', filename='post_pics/' + book.book_image) }}">
+
+            <p class="article-content">
+                <b>Author(s):</b> {{ book.author }}
+                <b>Published</b>: {{ book.year }}
+                <b>Subject</b>: {{ book.subjID.subjectName }}</p>
+            
+            <p class="article-content"><b>Price:</b> £{{ book.price }}0</p>
+           
+
+            <div class="article-metadata">
+                <a class="btn btn-info" href="{{ url_for('buy', book_id=book.id) }}">Buy Now</a> <a class="btn btn-outline-info" href="{{ url_for('add_to_cart', book_id=book.id) }}">Save Item</a><br><br>
+              Posted by <a class="mr-2" href="{{ url_for('user_books', username=book.poster.username) }}">{{ book.poster.username }}</a>
+              <small class="text-muted">{{ book.date_posted.strftime('%Y-%m-%d') }}</small>
+            </div>
+
+          </div>
+        </article>
+
+    {% endfor %}
+
+
+
+	</div>
+	
+{% endblock content %}
+
+
+

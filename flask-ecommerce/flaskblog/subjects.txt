@@ -1,0 +1,46 @@
+INSERT INTO `subject`(`id`,`subjectName`) VALUES (1,'Accounting and Finance');
+INSERT INTO `subject`(`id`,`subjectName`) VALUES (2,'Biology');
+INSERT INTO `subject`(`id`,`subjectName`) VALUES (3,'Business');
+INSERT INTO `subject`(`id`,`subjectName`) VALUES (4,'Chemistry');
+INSERT INTO `subject`(`id`,`subjectName`) VALUES (5,'Computer Science');
+INSERT INTO `subject`(`id`,`subjectName`) VALUES (6,'Dentistry');
+INSERT INTO `subject`(`id`,`subjectName`) VALUES (7,'Economics');
+INSERT INTO `subject`(`id`,`subjectName`) VALUES (8,'Engineering');
+INSERT INTO `subject`(`id`,`subjectName`) VALUES (9,'English Literature');
+INSERT INTO `subject`(`id`,`subjectName`) VALUES (10,'History');
+INSERT INTO `subject`(`id`,`subjectName`) VALUES (11,'Languages');
+INSERT INTO `subject`(`id`,`subjectName`) VALUES (12,'Law');
+INSERT INTO `subject`(`id`,`subjectName`) VALUES (13,'Marketing');
+INSERT INTO `subject`(`id`,`subjectName`) VALUES (14,'Maths');
+INSERT INTO `subject`(`id`,`subjectName`) VALUES (15,'Medicine');
+INSERT INTO `subject`(`id`,`subjectName`) VALUES (16,'Music');
+INSERT INTO `subject`(`id`,`subjectName`) VALUES (17,'Philosophy');
+INSERT INTO `subject`(`id`,`subjectName`) VALUES (18,'Physics');
+
+
+
+
+    <!-- {% for post in posts.items %}
+        <article class="media content-section">
+          <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="{{ url_for('user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
+              <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+            </div>
+            <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+        </article>
+    {% endfor %}
+    {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+      {% if page_num %}
+        {% if posts.page == page_num %}
+          <a class="btn btn-info mb-4" href="{{ url_for('home', page=page_num) }}">{{ page_num }}</a>
+        {% else %}
+          <a class="btn btn-outline-info mb-4" href="{{ url_for('home', page=page_num) }}">{{ page_num }}</a>
+        {% endif %}
+      {% else %}
+        ...
+      {% endif %}
+    {% endfor %} -->
